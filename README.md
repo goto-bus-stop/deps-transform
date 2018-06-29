@@ -15,14 +15,37 @@ run browserify transforms on a module-deps stream
 
 ## Install
 
-```
+```bash
 npm install deps-transform
 ```
 
 ## Usage
 
+Use it to apply transforms after the 'deps' stage in the browserify pipeline:
+
 ```js
-var depsTransform = require('deps-transform')
+// minify JUST before packing
+b.pipeline.get('pack').unshift(
+  transform('uglifyify'))
+```
+
+You can use it to apply transforms on a preexisting bundle:
+
+```bash
+# extract modules from bundle.js,
+# format them nicely using babel-preset-unminify,
+# save in the out/ folder.
+browser-unpack < bundle.js | \
+  deps-transform babelify --presets [ unminify ] | \
+  deps-write out
+```
+
+Perhaps generate two bundles, one for modern browsers and one for old browsers:
+
+```bash
+browser-unpack < bundle.es6.js | \
+  deps-transform babelify --presets [ env ] | \
+  browser-pack > bundle.es5.js
 ```
 
 ## License
