@@ -6,8 +6,11 @@ var pump = require('pump')
 
 module.exports = function depsTransform (transformName, opts) {
   var basedir = process.cwd()
-  var transformPath = resolve.sync(transformName, { basedir: basedir })
-  var transform = require(transformPath)
+  var transform = typeof transformName === 'function' ? transformName : null
+  if (!transform) {
+    var transformPath = resolve.sync(transformName, { basedir: basedir })
+    transform = require(transformPath)
+  }
 
   return through.obj(onrow)
 
