@@ -13,7 +13,7 @@ test('browserify transforms + options', function (t) {
   var deps = mdeps()
   deps
     .pipe(sort())
-    .pipe(transform('uglifyify', { sourceMap: false, toplevel: true }))
+    .pipe(transform(uglifyify, { sourceMap: false, toplevel: true }))
     .pipe(concat(function (res) {
       t.equal(res[0].source, 'console.log("whatever");')
       t.equal(res[1].source, 'exports.c=4;')
