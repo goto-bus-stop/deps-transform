@@ -10,7 +10,7 @@ if (argv._.length < 1) {
 }
 
 process.stdin
-  .pipe(json.parse([ true ]))
+  .pipe(json.parse([true]))
   .pipe(transform(argv._[0], argv))
   .pipe(json.stringify())
   .pipe(process.stdout)
