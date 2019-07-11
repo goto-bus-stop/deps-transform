@@ -14,7 +14,7 @@
     "standard": "^13.0.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.11.0",
-    "uglifyify": "^5.0.1"
+    "uglifyify": "^4.0.5"
   },
   "homepage": "https://github.com/goto-bus-stop/deps-transform",
   "keywords": [
