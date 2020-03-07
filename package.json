@@ -7,7 +7,7 @@
     "url": "https://github.com/goto-bus-stop/deps-transform/issues"
   },
   "devDependencies": {
-    "concat-stream": "^1.6.2",
+    "concat-stream": "^2.0.0",
     "deps-sort": "^2.0.0",
     "module-deps": "^6.2.1",
     "scream-stream": "^1.0.0",
