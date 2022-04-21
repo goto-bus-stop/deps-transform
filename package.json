@@ -11,7 +11,7 @@
     "deps-sort": "^2.0.0",
     "module-deps": "^6.2.1",
     "scream-stream": "^1.0.0",
-    "standard": "^15.0.0",
+    "standard": "^17.0.0",
     "tap-spec": "^5.0.0",
     "tape": "^5.0.0",
     "uglifyify": "^4.0.5"
